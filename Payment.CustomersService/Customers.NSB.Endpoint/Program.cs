@@ -32,9 +32,11 @@ namespace Customers.NSBEndpoint
             var endpointConfiguration = new EndpointConfiguration(endPointName);
             var transport = endpointConfiguration.UseTransport<RabbitMQTransport>();
             transport.UseConventionalRoutingTopology();
-            string rabbitmqUrl = Environment.GetEnvironmentVariable("RABBITMQ_PCF_NSB_URL");
+            // string rabbitmqUrl = Environment.GetEnvironmentVariable("RABBITMQ_PCF_NSB_URL");
+            string rabbitmqUrl = "amqps://puiqhexk:3gUUuCaX0DnYBCOXzOvdK2R9TBfBbCnj@grouse.rmq.cloudamqp.com/puiqhexk";
             transport.ConnectionString(rabbitmqUrl);
-            string mysqlConnectionString = Environment.GetEnvironmentVariable("MYSQL_STRCON_CORE_CUSTOMERS");
+            // string mysqlConnectionString = Environment.GetEnvironmentVariable("MYSQL_STRCON_CORE_CUSTOMERS");
+            string mysqlConnectionString = "Data Source=127.0.0.1;Port=3306;Database=orders;User Id=root;Password=12345";
             var persistence = endpointConfiguration.UsePersistence<NHibernatePersistence>();
             persistence.UseOutboxRecord<Outbox, OutboxMap>();
             var nHibernateConfig = new Configuration();
@@ -73,7 +75,8 @@ namespace Customers.NSBEndpoint
 
         private static IServiceProvider CreateServices()
         {
-            string connectionString = Environment.GetEnvironmentVariable("MYSQL_STRCON_CORE_CUSTOMERS");
+            // string connectionString = Environment.GetEnvironmentVariable("MYSQL_STRCON_CORE_CUSTOMERS");
+            string connectionString= "Data Source = 127.0.0.1; Port = 3306; Database = orders; User Id = root; Password = 12345";
             return new ServiceCollection()
                 .AddFluentMigratorCore()
                 .ConfigureRunner(rb => rb

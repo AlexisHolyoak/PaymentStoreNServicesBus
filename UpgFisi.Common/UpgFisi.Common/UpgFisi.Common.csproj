@@ -6,11 +6,11 @@
     <Authors>Efrain Bautista</Authors>
     <Company>UPG FISI</Company>
     <Product>UpgFisi Common</Product>
-    <Copyright>2019</Copyright>
-    <PackageProjectUrl>https://github.com/ehuarcayal/MoneyTransferEDADotNet</PackageProjectUrl>
+    <Copyright>2020</Copyright>
+    <PackageProjectUrl>https://github.com/AlexisHolyoak/PaymentStoreNServicesBus</PackageProjectUrl>
     <Version>1.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>ehuarcayal.UpgFisi.Common</PackageId>
+    <PackageId>alexisholyoak.UpgFisi.Common</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
